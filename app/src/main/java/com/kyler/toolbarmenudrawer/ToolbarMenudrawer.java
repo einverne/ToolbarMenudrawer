@@ -78,6 +78,7 @@ public class ToolbarMenudrawer extends ActionBarActivity {
 
         super.onCreate(savedInstanceState);
 
+        //get SharedPreferences object to get whether application is first open.
         SharedPreferences first = PreferenceManager
                 .getDefaultSharedPreferences(this);
 
@@ -85,6 +86,7 @@ public class ToolbarMenudrawer extends ActionBarActivity {
             super.finish();
         }
 
+        //whether is first time
         if (!first.getBoolean("firstTime", false)) {
 
             Intent intent = new Intent(this, FirstRun.class);
@@ -92,8 +94,8 @@ public class ToolbarMenudrawer extends ActionBarActivity {
             startActivity(intent);
             finish();
 
+            //set the flag fot firsttime
             SharedPreferences.Editor editor = first.edit();
-
             editor.putBoolean("firstTime", true);
             editor.commit();
 
@@ -101,6 +103,7 @@ public class ToolbarMenudrawer extends ActionBarActivity {
 
         setContentView(R.layout.toolbarmenudrawer);
 
+        //get Toolbar
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
 
@@ -115,9 +118,11 @@ public class ToolbarMenudrawer extends ActionBarActivity {
         mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow,
                 GravityCompat.START);
 
+        //get navigation string Array
         MDTitles = getResources().getStringArray(
                 R.array.navigation_main_sections);
 
+        //get navigation drawables
         MDIcons = getResources().obtainTypedArray(R.array.drawable_ids);
 
         icons = new ArrayList<Icons>();
@@ -128,16 +133,19 @@ public class ToolbarMenudrawer extends ActionBarActivity {
 
         icons.add(new Icons(MDTitles[2], MDIcons.getResourceId(2, -3)));
 
+        //don't forget
         MDIcons.recycle();
 
+        //adapter for listview in navigationbar
         adapter = new ToolbarMenudrawerAdapter(getApplicationContext(), icons);
         mDrawerList.setAdapter(adapter);
 
+        //set listview listener
         mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
 
         LayoutInflater inflater = getLayoutInflater();
         final ViewGroup header = (ViewGroup) inflater.inflate(R.layout.header,
-                mDrawerList, false);
+                mDrawerList, false);            //navigation drawer header
 
         final ViewGroup footer = (ViewGroup) inflater.inflate(R.layout.footer,
                 mDrawerList, false);

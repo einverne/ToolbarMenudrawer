@@ -12,7 +12,7 @@
         android:layout_height="220dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:background="#303f9f" />
+        android:background="#ff9f2474" />
 
     <com.kyler.toolbarmenudrawer.ToolbarMenudrawerTextView
         android:id="@+id/appNameText"

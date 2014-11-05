@@ -11,22 +11,22 @@
         android:layout_height="200dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:background="#1a237e" />
+        android:background="#ff7e007d" />
 
     <ImageView
-        android:id="@+id/circularImageView1"
+        android:id="@+id/circularImageView_ProfilePhoto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/myTextView1"
+        android:layout_above="@+id/myTextView_ProfileName"
         android:layout_centerHorizontal="true"
         android:scaleType="centerInside"
         android:src="@drawable/account_circle" />
 
     <com.kyler.toolbarmenudrawer.ToolbarMenudrawerTextView
-        android:id="@+id/myTextView1"
+        android:id="@+id/myTextView_ProfileName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/myTextView2"
+        android:layout_above="@+id/myTextView_mail"
         android:layout_centerHorizontal="true"
         android:gravity="top"
         android:text="@string/my_name"
@@ -35,7 +35,7 @@
         customfontdemo:fontName="Roboto-Regular.ttf" />
 
     <com.kyler.toolbarmenudrawer.ToolbarMenudrawerTextView
-        android:id="@+id/myTextView2"
+        android:id="@+id/myTextView_mail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/imageView1"

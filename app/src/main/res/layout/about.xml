@@ -31,7 +31,7 @@
             tools:ignore="ContentDescription" />
 
         <com.kyler.toolbarmenudrawer.ToolbarMenudrawerTextView
-            android:id="@+id/myTextView1"
+            android:id="@+id/myTextView_ProfileName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
