@@ -32,9 +32,11 @@ public class ToolbarMenudrawerTextView extends TextView {
             String fontName = a
                     .getString(R.styleable.ToolbarMenuDrawer_fontName);
             if (fontName != null) {
-                Typeface myTypeface = Typeface.createFromAsset(getContext()
-                        .getAssets(), "fonts/" + fontName);
-                setTypeface(myTypeface);
+                if (!isInEditMode()){
+                    Typeface myTypeface = Typeface.createFromAsset(getContext()
+                            .getAssets(), "fonts/" + fontName);
+                    setTypeface(myTypeface);
+                }
             }
             a.recycle();
         }
